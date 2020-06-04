@@ -1,4 +1,5 @@
 import { Weather } from '../types';
+
 const API_URL = process.env.REACT_APP_API_URL || 'https://api.openweathermap.org/data/2.5';
 const API_KEY = process.env.REACT_APP_API_KEY || '84777e8df3b215d48d552278b4bc99ec';
 
@@ -14,31 +15,39 @@ function handleResponse(response: any) {
  * Fetch current weather by city name
  * @param city
  */
-async function getWeather(city: string) {
-  const res = await fetch(`${API_URL}/weather/?q=${city}&units=metric&APPID=${API_KEY}`);
-  const weather = handleResponse(res);
-  if (Object.entries(weather).length) {
-    const mappedData = mapDataToWeatherInterface(weather);
-    return mappedData;
-  }
-  return weather;
+function getWeather(city: string) {
+  return fetch(
+    `${API_URL}/weather/?q=${city}&units=metric&APPID=${API_KEY}`
+  )
+    .then((res) => handleResponse(res))
+    .then((weather) => {
+      if (Object.entries(weather).length) {
+        const mappedData = mapDataToWeatherInterface(weather);
+        return mappedData;
+      }
+      return weather;
+    });
 }
 
 /**
  * Fetch forecast by city name
  * @param city 
  */
-async function getForecast(city: String) {
-  const res = await fetch(`${API_URL}/forecast/?q=${city}&units=metric&APPID=${API_KEY}`);
-  const result = handleResponse(res);
-  if (Object.entries(result).length) {
-    const forecast = [];
-    for (let i = 0; i < result.list.length; i += 8) {
-      forecast.push(mapDataToWeatherInterface(result.list[i + 4]));
-    }
-    return forecast;
-  }
-  return result;
+function getForecast(city: String) {
+  return fetch(
+    `${API_URL}/forecast/?q=${city}&units=metric&APPID=${API_KEY}`
+  )
+    .then((res) => handleResponse(res))
+    .then((result) => {
+      if (Object.entries(result).length) {
+        const forecast = [];
+        for (let i = 0; i < result.list.length; i += 8) {
+          forecast.push(mapDataToWeatherInterface(result.list[i + 4]));
+        }
+        return forecast;
+      }
+      return result;
+    });
 }
 
 /**

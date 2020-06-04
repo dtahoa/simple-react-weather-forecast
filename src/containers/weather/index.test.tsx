@@ -32,7 +32,7 @@ describe('<WeatherContainer />', () => {
     const cityNameEl = await screen.findByText('Eldoret KE');
     expect(cityNameEl).toBeInTheDocument();
     expect(screen.getByText('Eldoret KE')).toBeInTheDocument();
-    expect(screen.getByText('Thu, 5:24PM')).toBeInTheDocument();
+    expect(screen.getByText('Thu, 5:24 PM')).toBeInTheDocument();
     expect(screen.getByText('20°C')).toBeInTheDocument();
     expect(screen.getByText('Broken Clouds')).toBeInTheDocument();
     expect(screen.getByText('Saturday')).toBeInTheDocument();

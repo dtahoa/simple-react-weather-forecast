@@ -1,10 +1,12 @@
 # React - weather-app
 
-https://dtahoa.github.io//simple-react-weather-forecast/
+[Demo](https://dtahoa.github.io/simple-react-weather-forecast/)
 
 # Table of Contents
 - **[Getting Started](https://github.com/dtahoa/simple-react-weather-forecast#getting-started)**
 - **[Technologies](https://github.com/dtahoa/simple-react-weather-forecast#technologies)**
+- **[License](https://github.com/dtahoa/simple-react-weather-forecast#license)**
+- **[Learn More](https://github.com/dtahoa/simple-react-weather-forecast#learn-more)**
 - **[Contact](https://github.com/dtahoa/simple-react-weather-forecast#contact)**
 
 # Getting Started
@@ -59,6 +61,10 @@ Launches the test runner in the interactive watch mode. See the section about
 
 [**running tests**](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+`npm run coverage`
+
+Launches the test runner with a coverate report.
+
 `npm run build`
 
 Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -78,6 +84,10 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 - **[React](https://reactjs.org/)** _(v16.13)_
 - **[Hooks](https://reactjs.org/docs/hooks-intro.html)**
 - **[Material-ui](https://material-ui.com/)** React components for faster and easier web development. Build your own design system, or start with Material Design.
+
+## License
+
+Have a look at the **[license file](https://github.com/dtahoa/simple-react-weather-forecast/blob/master/LICENSE)** for details
 
 ## Learn More
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

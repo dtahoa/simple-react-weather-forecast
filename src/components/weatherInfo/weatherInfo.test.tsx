@@ -33,7 +33,7 @@ describe('<WeatherInfo />', () => {
     await screen.findByText('Eldoret KE');
 
     expect(screen.getByText('Eldoret KE')).toBeInTheDocument();
-    expect(screen.getByText('Wed, 2:36PM')).toBeInTheDocument();
+    expect(screen.getByText('Wed, 2:36 PM')).toBeInTheDocument();
     expect(screen.getByText('19°C')).toBeInTheDocument();
     expect(screen.getByText('Few Clouds')).toBeInTheDocument();
   });

@@ -24,6 +24,6 @@ describe('<SubHeader />', () => {
   test('renders the date, time of the day of weather', () => {
     render(<SubHeader date={testProps.currentWeather.date} />);
 
-    expect(screen.getByText('Wed, 2:36PM')).toBeInTheDocument();
+    expect(screen.getByText('Wed, 2:36 PM')).toBeInTheDocument();
   });
 });
