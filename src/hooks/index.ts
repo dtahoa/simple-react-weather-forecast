@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
 
+/**
+ * This hook allows you to debounce any fast changing value. https://usehooks.com/useDebounce/
+ * @param value 
+ * @param delay 
+ */
 export default function useDebounce(value: string, delay: number) {
   const [debouncedValue, setDebouncedValue] = useState(value);
 

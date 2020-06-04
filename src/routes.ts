@@ -1,5 +1,6 @@
 import WeatherContainer from './containers/weather';
 
+// Config routes here
 const dashRoutes = [
   {
     path: '/',
