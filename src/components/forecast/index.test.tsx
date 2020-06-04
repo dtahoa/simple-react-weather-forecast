@@ -14,6 +14,7 @@ describe('<Forecast />', () => {
       forecast: mockForecast,
     };
   });
+  afterEach(() => jest.restoreAllMocks());
 
   test('renders the weekly forecast for the specified location', async () => {
     render(<Forecast forecast={testProps.forecast} />);
