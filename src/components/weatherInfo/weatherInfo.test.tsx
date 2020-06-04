@@ -6,6 +6,10 @@ import '@testing-library/jest-dom/extend-expect';
 
 import { WeatherFormated, ForecastItem } from '../../types';
 
+jest.mock('moment', () => () => ({
+  format: () => 'Wed, 2:36 PM'
+}));
+
 describe('<WeatherInfo />', () => {
   let testProps: {
     currentWeather: WeatherFormated; forecast: ForecastItem[];
@@ -19,6 +23,7 @@ describe('<WeatherInfo />', () => {
       loadingWeather: false,
     };
   });
+  afterEach(() => jest.restoreAllMocks());
 
   test('renders the elements that make up the app layout', async () => {
     render(
@@ -33,7 +38,7 @@ describe('<WeatherInfo />', () => {
     await screen.findByText('Eldoret KE');
 
     expect(screen.getByText('Eldoret KE')).toBeInTheDocument();
-    expect(screen.getByText('Wed, 2:36 PM')).toBeInTheDocument();
+    expect(screen.findAllByText('Wed, 2:36 PM')).not.toBeNull();
     expect(screen.getByText('19°C')).toBeInTheDocument();
     expect(screen.getByText('Few Clouds')).toBeInTheDocument();
   });

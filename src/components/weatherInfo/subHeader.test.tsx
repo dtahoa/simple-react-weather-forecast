@@ -6,6 +6,10 @@ import { mockCurrentWeather } from '../../__mocks__/Weather.mock';
 
 import { WeatherFormated } from '../../types';
 
+jest.mock('moment', () => () => ({
+  format: () => 'Wed, 2:36 PM'
+}));
+
 describe('<SubHeader />', () => {
   let testProps: { currentWeather: WeatherFormated; };
   beforeEach(() => {
@@ -13,6 +17,7 @@ describe('<SubHeader />', () => {
       currentWeather: mockCurrentWeather,
     };
   });
+  afterEach(() => jest.restoreAllMocks());
 
   test('renders without crashing', () => {
     const { container } = render(
@@ -24,6 +29,6 @@ describe('<SubHeader />', () => {
   test('renders the date, time of the day of weather', () => {
     render(<SubHeader date={testProps.currentWeather.date} />);
 
-    expect(screen.getByText('Wed, 2:36 PM')).toBeInTheDocument();
+    expect(screen.findAllByText('Wed, 2:36 PM')).not.toBeNull();
   });
 });
