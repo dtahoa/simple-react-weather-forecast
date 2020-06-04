@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/simple-react-weather-forecast/static/css/main.397ec257.chunk.css",
+    "main.js": "/simple-react-weather-forecast/static/js/main.c0b61d27.chunk.js",
+    "main.js.map": "/simple-react-weather-forecast/static/js/main.c0b61d27.chunk.js.map",
+    "runtime-main.js": "/simple-react-weather-forecast/static/js/runtime-main.7a877ee9.js",
+    "runtime-main.js.map": "/simple-react-weather-forecast/static/js/runtime-main.7a877ee9.js.map",
+    "static/js/2.66e1e214.chunk.js": "/simple-react-weather-forecast/static/js/2.66e1e214.chunk.js",
+    "static/js/2.66e1e214.chunk.js.map": "/simple-react-weather-forecast/static/js/2.66e1e214.chunk.js.map",
+    "index.html": "/simple-react-weather-forecast/index.html",
+    "precache-manifest.8d44287652c645763d546c93953a4e0b.js": "/simple-react-weather-forecast/precache-manifest.8d44287652c645763d546c93953a4e0b.js",
+    "service-worker.js": "/simple-react-weather-forecast/service-worker.js",
+    "static/css/main.397ec257.chunk.css.map": "/simple-react-weather-forecast/static/css/main.397ec257.chunk.css.map",
+    "static/js/2.66e1e214.chunk.js.LICENSE.txt": "/simple-react-weather-forecast/static/js/2.66e1e214.chunk.js.LICENSE.txt",
+    "static/media/cloud.svg": "/simple-react-weather-forecast/static/media/cloud.077965db.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7a877ee9.js",
+    "static/js/2.66e1e214.chunk.js",
+    "static/css/main.397ec257.chunk.css",
+    "static/js/main.c0b61d27.chunk.js"
+  ]
+}
