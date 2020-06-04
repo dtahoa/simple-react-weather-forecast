@@ -77,7 +77,7 @@ export interface WeatherFormated {
 }
 
 export interface RouteType {
-  path: string,
+  path: string;
   name: string;
   component?: React.FunctionComponent;
   layout: string;

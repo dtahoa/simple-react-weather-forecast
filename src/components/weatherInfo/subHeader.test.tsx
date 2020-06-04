@@ -7,11 +7,11 @@ import { mockCurrentWeather } from '../../__mocks__/Weather.mock';
 import { WeatherFormated } from '../../types';
 
 jest.mock('moment', () => () => ({
-  format: () => 'Wed, 2:36 PM'
+  format: () => 'Wed, 2:36 PM',
 }));
 
 describe('<SubHeader />', () => {
-  let testProps: { currentWeather: WeatherFormated; };
+  let testProps: { currentWeather: WeatherFormated };
   beforeEach(() => {
     testProps = {
       currentWeather: mockCurrentWeather,

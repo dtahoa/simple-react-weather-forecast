@@ -65,12 +65,11 @@ export default function WeatherSearch(props: WeatherSearchProps) {
               <InputAdornment position="end">
                 <CircularProgress size={20} />
               </InputAdornment>
-            ) :
-              (
-                <InputAdornment position="start">
-                  <Search />
-                </InputAdornment>
-              )
+            ) : (
+              <InputAdornment position="start">
+                <Search />
+              </InputAdornment>
+            )
           }
         />
         {error && <Typography className={classes.error}>{error}</Typography>}

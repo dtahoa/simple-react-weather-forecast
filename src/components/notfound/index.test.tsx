@@ -24,8 +24,9 @@ describe('<PageNotFound />', () => {
 
     expect(screen.getByText('Page not found :(')).toBeInTheDocument();
     expect(
-      screen
-        .getByText('Maybe the page you are looking for has been removed, or you typed in the wrong URL'))
-      .toBeInTheDocument();
+      screen.getByText(
+        'Maybe the page you are looking for has been removed, or you typed in the wrong URL'
+      )
+    ).toBeInTheDocument();
   });
 });

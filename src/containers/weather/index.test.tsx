@@ -2,14 +2,17 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import WeatherContainer from './index';
-import { mockWeatherData, mockForecastData } from '../../__mocks__/Weather.mock';
+import {
+  mockWeatherData,
+  mockForecastData,
+} from '../../__mocks__/Weather.mock';
 
 jest.mock('../../hooks', () => {
-  return jest.fn(searchCity => searchCity);
+  return jest.fn((searchCity) => searchCity);
 });
 
 jest.mock('moment', () => () => ({
-  format: () => 'Thu, 5:24 PM'
+  format: () => 'Thu, 5:24 PM',
 }));
 
 describe('<WeatherContainer />', () => {
@@ -18,17 +21,19 @@ describe('<WeatherContainer />', () => {
   test('fetches and then renders the current weather', async () => {
     jest
       .spyOn(window, 'fetch')
-      .mockImplementationOnce(() =>
-        Promise.resolve({
-          ok: true,
-          json: () => Promise.resolve(mockWeatherData)
-        } as any) // eslint-disable-line
+      .mockImplementationOnce(
+        () =>
+          Promise.resolve({
+            ok: true,
+            json: () => Promise.resolve(mockWeatherData),
+          } as any) // eslint-disable-line
       )
-      .mockImplementationOnce(() =>
-        Promise.resolve({
-          ok: true,
-          json: () => Promise.resolve(mockForecastData)
-        } as any) // eslint-disable-line
+      .mockImplementationOnce(
+        () =>
+          Promise.resolve({
+            ok: true,
+            json: () => Promise.resolve(mockForecastData),
+          } as any) // eslint-disable-line
       );
 
     render(<WeatherContainer />);
@@ -47,7 +52,7 @@ describe('<WeatherContainer />', () => {
       ok: false,
       status: 500,
       statusText: 'Internal Server Error',
-      message: 'An internal server error occurred'
+      message: 'An internal server error occurred',
     };
 
     jest

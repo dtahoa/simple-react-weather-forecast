@@ -1,7 +1,9 @@
 import { Weather } from '../types';
 
-const API_URL = process.env.REACT_APP_API_URL || 'https://api.openweathermap.org/data/2.5';
-const API_KEY = process.env.REACT_APP_API_KEY || '84777e8df3b215d48d552278b4bc99ec';
+const API_URL =
+  process.env.REACT_APP_API_URL || 'https://api.openweathermap.org/data/2.5';
+const API_KEY =
+  process.env.REACT_APP_API_KEY || '84777e8df3b215d48d552278b4bc99ec';
 
 // eslint-disable-next-line
 function handleResponse(response: any) {
@@ -16,9 +18,7 @@ function handleResponse(response: any) {
  * @param city
  */
 function getWeather(city: string) {
-  return fetch(
-    `${API_URL}/weather/?q=${city}&units=metric&APPID=${API_KEY}`
-  )
+  return fetch(`${API_URL}/weather/?q=${city}&units=metric&APPID=${API_KEY}`)
     .then((res) => handleResponse(res))
     .then((weather) => {
       if (Object.entries(weather).length) {
@@ -31,12 +31,10 @@ function getWeather(city: string) {
 
 /**
  * Fetch forecast by city name
- * @param city 
+ * @param city
  */
 function getForecast(city: String) {
-  return fetch(
-    `${API_URL}/forecast/?q=${city}&units=metric&APPID=${API_KEY}`
-  )
+  return fetch(`${API_URL}/forecast/?q=${city}&units=metric&APPID=${API_KEY}`)
     .then((res) => handleResponse(res))
     .then((result) => {
       if (Object.entries(result).length) {
@@ -52,7 +50,7 @@ function getForecast(city: String) {
 
 /**
  * Map data from API to weather interface
- * @param data 
+ * @param data
  */
 function mapDataToWeatherInterface(data: Weather) {
   const mapped = {

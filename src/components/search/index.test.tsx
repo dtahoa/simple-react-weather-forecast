@@ -4,19 +4,19 @@ import WeatherSearch from './index';
 import '@testing-library/jest-dom/extend-expect';
 
 jest.mock('../../hooks', () => {
-  return jest.fn(searchCity => searchCity);
+  return jest.fn((searchCity) => searchCity);
 });
-
 
 describe('<WeatherSearch />', () => {
   let testProps: {
     error: boolean | null | undefined;
-    city?: string; onCityChange?: () => void;
+    city?: string;
+    onCityChange?: () => void;
   };
   beforeEach(() => {
     testProps = {
       city: 'Eldoret',
-      onCityChange: () => { },
+      onCityChange: () => {},
       error: null,
     };
   });
@@ -24,10 +24,7 @@ describe('<WeatherSearch />', () => {
   test('renders a search input where one can type in a city', async () => {
     const mockOnCityChange = jest.fn();
     render(
-      <WeatherSearch
-        onCityChange={mockOnCityChange}
-        error={testProps.error}
-      />
+      <WeatherSearch onCityChange={mockOnCityChange} error={testProps.error} />
     );
 
     await screen.findByRole('search');

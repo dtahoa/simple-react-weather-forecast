@@ -89,10 +89,9 @@ const WeatherInfo = (props: WeatherInfoProps) => {
               </Typography>
             </CardContent>
           </>
-        ) :
-          (
-            <CircularProgress color="secondary" />
-          )}
+        ) : (
+          <CircularProgress color="secondary" />
+        )}
         <CardActions>
           <Forecast forecast={forecast} />
         </CardActions>

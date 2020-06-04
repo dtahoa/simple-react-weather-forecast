@@ -6,8 +6,8 @@ const PageNotFound: React.FC = () => {
     <>
       <h3>Page not found :(</h3>
       <p>
-        Maybe the page you are looking for has been
-        removed, or you typed in the wrong URL
+        Maybe the page you are looking for has been removed, or you typed in the
+        wrong URL
       </p>
       <Link to="/">Home page</Link>
     </>

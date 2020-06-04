@@ -7,13 +7,15 @@ import '@testing-library/jest-dom/extend-expect';
 import { WeatherFormated, ForecastItem } from '../../types';
 
 jest.mock('moment', () => () => ({
-  format: () => 'Wed, 2:36 PM'
+  format: () => 'Wed, 2:36 PM',
 }));
 
 describe('<WeatherInfo />', () => {
   let testProps: {
-    currentWeather: WeatherFormated; forecast: ForecastItem[];
-    icon: string; loadingWeather: boolean;
+    currentWeather: WeatherFormated;
+    forecast: ForecastItem[];
+    icon: string;
+    loadingWeather: boolean;
   };
   beforeEach(() => {
     testProps = {
