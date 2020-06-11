@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer, createContext } from 'react';
 import { Route } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
@@ -10,6 +10,9 @@ import routes from '../routes';
 
 import { containerFluid } from '../assets/styles';
 import { RouteType } from '../types';
+import reducer, { initialState } from '../reducers';
+
+export const Store = createContext({} as any);
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
@@ -31,6 +34,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const AppLayout: React.FC = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   const classes = useStyles();
 
   const theme = createMuiTheme({
@@ -70,13 +75,15 @@ const AppLayout: React.FC = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Header />
-      <div className={classes.content}>
-        <div className={classes.container}>{getRoutes(routes)}</div>
-      </div>
-      <Footer />
-    </ThemeProvider>
+    <Store.Provider value={{ state, dispatch }}>
+      <ThemeProvider theme={theme}>
+        <Header />
+        <div className={classes.content}>
+          <div className={classes.container}>{getRoutes(routes)}</div>
+        </div>
+        <Footer />
+      </ThemeProvider>
+    </Store.Provider>
   );
 };
 
