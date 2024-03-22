@@ -68,7 +68,7 @@ const AppLayout: React.FC = () => {
       return null;
     });
   };
-  handleClick = () => {
+  const handleClick = () => {
     window.open('https://api-nadio-service.nadio.co.kr/users/me/CheckplusSuccess', '_blank');
   };
 
@@ -77,7 +77,7 @@ const AppLayout: React.FC = () => {
       <Header />
       <div className={classes.content}>
         <div className={classes.container}>{getRoutes(routes)}</div>
-        <div onClick={this.handleClick}>
+        <div onClick={handleClick}>
           Click me to open the link
         </div>
       </div>
