@@ -76,10 +76,10 @@ const AppLayout: React.FC = () => {
     <ThemeProvider theme={theme}>
       <Header />
       <div className={classes.content}>
-        <div className={classes.container}>{getRoutes(routes)}</div>
-        <div onClick={handleClick}>
+        {/* <div className={classes.container}>{getRoutes(routes)}</div> */}
+        <button onClick={handleClick}>
           Click me to open the link
-        </div>
+        </button>
       </div>
 
       <Footer />
